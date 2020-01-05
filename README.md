@@ -1,6 +1,9 @@
 # sir0p_infra
 Boris Korzun Infra repository
 
+bastion_IP = 35.217.9.133
+someinternalhost_IP = 10.128.0.2
+
 Для прямого доступа по "ssh someinternalhost" мы можем добавить в
 ~/.ssh/config
 
