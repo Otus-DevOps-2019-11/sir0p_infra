@@ -1,0 +1,7 @@
+{
+       "gcp_project_id": "infra-asdf",
+       "gcp_source_image_family": "ubuntu-1604-lts",
+       "gcp_zone": "us-central1-a",
+       "gcp_ssh_username": "appuser",
+       "gcp_machine_type": "f1-micro"
+ }
