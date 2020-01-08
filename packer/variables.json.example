@@ -1,7 +1,12 @@
 {
-       "gcp_project_id": "infra-asdf",
+       "gcp_project_id": "asdf-asdf",
        "gcp_source_image_family": "ubuntu-1604-lts",
        "gcp_zone": "us-central1-a",
        "gcp_ssh_username": "appuser",
        "gcp_machine_type": "f1-micro"
+       "gcp_disk_type": "pd-standard",
+       "gcp_disk_size": "10",
+       "gcp_tags": "asdfasdfr",
+       "gcp_network": "default",
+       "gcp_image_description": "abracadabra  image"
  }
