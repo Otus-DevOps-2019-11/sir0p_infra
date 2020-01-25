@@ -24,10 +24,7 @@ variable sir0p_public_key_path {
   # Описание переменной
   description = "Path to the public key used for ssh access"
 }
-variable sir0p_private_key_path {
-  # Описание переменной
-  description = "Path to the public key used for ssh access"
-}
+
 variable disk_image {
   description = "Disk image"
 }
