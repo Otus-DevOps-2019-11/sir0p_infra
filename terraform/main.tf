@@ -1,6 +1,6 @@
 terraform {
   # Версия terraform
-  required_version = "0.12.18"
+  required_version = "~>0.12.18"
 }
 
 provider "google" {
@@ -15,16 +15,20 @@ resource "google_compute_project_metadata_item" "ssh-keys" {
   key   = "ssh-keys"
   value = "sir0p:${file(var.sir0p_public_key_path)}appuser1:${file(var.sir0p_public_key_path)}appuser2:${file(var.appuser_public_key_path)}"
 }
-#metadata = {
-#  ssh-keys = "appuser:${file(var.appuser_public_key_path)}"
-#   ssh-keys = "sir0p:${file(var.sir0p_public_key_path)}"
+# решение на память
+# metadata = {
+#  ssh-keys = <<EOF
+#       appuser:${file(var.appuser_public_key_path)}
+#       sir0p:${file(var.sir0p_public_key_path)}
+#       EOF
 #}
 
 resource "google_compute_instance" "app" {
-  name         = "reddit-app"
+  name         = "${var.name_app}-${count.index}"
   machine_type = "g1-small"
   #zone = "us-central1-a"
-  zone = var.zone
+  zone  = var.zone
+  count = var.count_app
   boot_disk {
     initialize_params {
       image = var.disk_image

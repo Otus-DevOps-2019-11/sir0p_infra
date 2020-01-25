@@ -28,3 +28,34 @@ variable sir0p_public_key_path {
 variable disk_image {
   description = "Disk image"
 }
+variable name_app {
+  description = "name_app"
+}
+
+variable count_app {
+  description = "count_app"
+}
+
+variable health_check_port {
+  description = "Port for healthcheck backend service."
+}
+
+variable instance_group_name_port {
+  default = "http"
+}
+
+variable instance_group_port {
+  default = "9292"
+}
+
+variable forwarding_rule_port_range {
+  default = "80"
+}
+
+variable hc_check_interval_sec {
+  default = "1"
+}
+
+variable hc_timeout_sec {
+  default = "1"
+}
