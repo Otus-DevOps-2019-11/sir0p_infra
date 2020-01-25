@@ -3,6 +3,7 @@ Description=Puma service
 After=network.target
 
 [Service]
+User=reddit
 Type=simple
 WorkingDirectory=/home/reddit/reddit
 ExecStart=/usr/local/bin/puma
