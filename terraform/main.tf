@@ -10,11 +10,15 @@ provider "google" {
   # ID проекта
   project = var.project
   region  = var.region
-  #metadata = {
-  #  ssh-keys = "appuser:${file(var.appuser_public_key_path)}"
-  #  ssh-keys = "sir0p:${file(var.sir0p_public_key_path)}"
-  #}
 }
+resource "google_compute_project_metadata_item" "ssh-keys" {
+  key   = "ssh-keys"
+  value = "sir0p:${file(var.sir0p_public_key_path)}appuser1:${file(var.sir0p_public_key_path)}appuser2:${file(var.appuser_public_key_path)}"
+}
+#metadata = {
+#  ssh-keys = "appuser:${file(var.appuser_public_key_path)}"
+#   ssh-keys = "sir0p:${file(var.sir0p_public_key_path)}"
+#}
 
 resource "google_compute_instance" "app" {
   name         = "reddit-app"
