@@ -60,12 +60,12 @@ variable hc_timeout_sec {
   default = "1"
 }
 variable app_disk_image {
-description = "Disk image for reddit app"
-default = "reddit-app"
+  description = "Disk image for reddit app"
+  default     = "reddit-app"
 }
 variable db_disk_image {
-description = "Disk image for reddit db"
-default = "reddit-db"
+  description = "Disk image for reddit db"
+  default     = "reddit-db"
 }
 variable name_db {
   description = "name_db"
@@ -74,9 +74,9 @@ variable name_db {
 
 variable count_db {
   description = "count_db"
-  default = 1
+  default     = 1
 }
 variable "source_ranges" {
   description = "Allow source network"
-  default = "0.0.0.0/0"
+  default     = ["0.0.0.0/0"]
 }
