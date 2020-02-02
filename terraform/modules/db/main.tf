@@ -15,6 +15,18 @@ resource "google_compute_instance" "db" {
   access_config {}
   }
   depends_on = [var.vm_depends_on]
+   provisioner "remote-exec" {
+    script = "${path.module}/install_mongodb.sh"
+  }
+
+  connection {
+    type  = "ssh"
+    host  = self.network_interface[0].access_config[0].nat_ip
+    user  = "appuser"
+    agent = false
+    # путь до приватного ключа
+    private_key = file(var.appuser_private_key_path)
+  }
 }
 resource "google_compute_firewall" "firewall_mongo" {
   name = "allow-mongo-default"

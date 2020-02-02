@@ -24,20 +24,17 @@ resource "google_compute_instance" "app" {
   }
 
   provisioner "remote-exec" {
-    script = "../modules/files/deploy.sh"
+    script = "${path.module}/deploy.sh"
   }
 
- # metadata = {
-  #  ssh-keys = "appuser:${file(var.appuser_public_key_path)}"
-  #}
- # connection {
- #   type  = "ssh"
- #   host  = self.network_interface[0].access_config[0].nat_ip
- #   user  = "appuser"
- #   agent = false
+  connection {
+    type  = "ssh"
+    host  = self.network_interface[0].access_config[0].nat_ip
+    user  = "appuser"
+    agent = false
     # путь до приватного ключа
- #   private_key = file(var.appuser_private_key_path)
- # }
+    private_key = file(var.appuser_private_key_path)
+  }
 
 }
 resource "google_compute_address" "app_ip" {

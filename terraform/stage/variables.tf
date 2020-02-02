@@ -78,5 +78,5 @@ variable count_db {
 }
 variable "source_ranges" {
   description = "Allow source network"
-  default     = ["0.0.0.0/0"]
+  default     = "0.0.0.0/0"
 }

@@ -27,7 +27,8 @@ resource "google_compute_project_metadata_item" "ssh-keys" {
 
 module "app" {
   source          = "../modules/app"
-  public_key_path = var.sir0p_public_key_path
+  public_key_path = var.appuser_public_key_path
+  appuser_private_key_path = var.appuser_private_key_path
   count_app       = var.count_app
   zone            = var.zone
   app_disk_image  = var.app_disk_image
@@ -43,7 +44,8 @@ module "app" {
 
 module "db" {
   source          = "../modules/db"
-  public_key_path = var.sir0p_public_key_path
+  public_key_path = var.appuser_public_key_path
+  appuser_private_key_path = var.appuser_private_key_path
   zone            = var.zone
   name_db         = var.name_db
   db_disk_image   = var.db_disk_image
