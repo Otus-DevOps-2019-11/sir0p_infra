@@ -14,6 +14,7 @@ resource "google_compute_instance" "db" {
   network = "default"
   access_config {}
   }
+  depends_on = [var.vm_depends_on]
 }
 resource "google_compute_firewall" "firewall_mongo" {
   name = "allow-mongo-default"
@@ -24,4 +25,7 @@ resource "google_compute_firewall" "firewall_mongo" {
   }
   target_tags = ["reddit-db"]
   source_tags = ["reddit-app"]
+}
+resource "google_compute_address" "db_ip" {
+name = "reddit-db-ip"
 }

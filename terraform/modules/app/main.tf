@@ -17,6 +17,16 @@ resource "google_compute_instance" "app" {
   }
   }
 
+  depends_on = [var.vm_depends_on]
+  provisioner "file" {
+    content     = templatefile("${path.module}/puma.service.tmpl", { database_url = var.database_url })
+    destination = "/tmp/puma.service"
+  }
+
+  provisioner "remote-exec" {
+    script = "../modules/files/deploy.sh"
+  }
+
  # metadata = {
   #  ssh-keys = "appuser:${file(var.appuser_public_key_path)}"
   #}
@@ -28,13 +38,7 @@ resource "google_compute_instance" "app" {
     # путь до приватного ключа
  #   private_key = file(var.appuser_private_key_path)
  # }
-  #provisioner "file" {
-  #  source      = "files/puma.service"
-  #  destination = "/tmp/puma.service"
-  #}
- # provisioner "remote-exec" {
-  #  script = "files/deploy.sh"
- # }
+
 }
 resource "google_compute_address" "app_ip" {
 name = "reddit-app-ip"

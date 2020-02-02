@@ -14,3 +14,7 @@ variable db_disk_image {
 variable name_db {
   description = "name_db"
 }
+variable "vm_depends_on" {
+  type    = any
+  default = null
+}

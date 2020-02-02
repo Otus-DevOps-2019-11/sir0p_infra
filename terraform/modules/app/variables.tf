@@ -17,3 +17,12 @@ variable name_app {
 variable count_app {
   description = "count_app"
 }
+variable "vm_depends_on" {
+  type    = any
+  default = null
+}
+
+variable "database_url" {
+  description = "Reddit app database url"
+  default     = "127.0.0.1:27017"
+}
