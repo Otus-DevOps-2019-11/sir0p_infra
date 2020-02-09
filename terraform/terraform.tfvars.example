@@ -1,0 +1,7 @@
+project = "your_project_id"
+appuser_public_key_path  = "~/.ssh/appuser.pub"
+appuser_private_key_path = "~/.ssh/appuser"
+disk_image = "reddit-base"
+sir0p_public_key_path  = "~/.ssh/appuser.pub"
+name_app = "reddis-app"
+count_app = "2"
