@@ -1,0 +1,10 @@
+---
+plugin: gcp_compute
+projects:
+  - "infra-264217"
+zones:
+  - "europe-north1-c"
+filters: []
+auth_kind: serviceaccount
+service_account_file: "~/gcp.json"
+...
