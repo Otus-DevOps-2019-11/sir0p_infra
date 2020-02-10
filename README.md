@@ -1,6 +1,20 @@
 # sir0p_infra
 Boris Korzun Infra repository
 
+
+#HW8 ansible-1
+
+После удаления каталога с репозиторием коммандой ansible app -m command -a 'rm -rf
+~/reddit'
+выполнение плейбука выполняет клонирование заново
+
+*
+создаем json конфиг, например с помощью "ansible-inventory  --list --export > inventory.json", убирем лишнее - ungrouped
+пишем "скрипт" который возращает его содержимое.
+Задача выполена.
+
+
+
 #HW7
 Создал корзину storage-bucket_url = gs://production-storage-bucket-infra-264217
 настройл терраформ для stage и prod на работу с удаленным бэкендом
