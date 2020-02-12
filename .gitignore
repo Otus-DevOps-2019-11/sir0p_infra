@@ -6,3 +6,4 @@ packer/variables*
 *.tfstate.backup
 *.tfvars
 .terraform/
+*.retry

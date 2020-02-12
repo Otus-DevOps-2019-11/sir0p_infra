@@ -18,14 +18,14 @@ resource "google_compute_instance" "app" {
   }
 
   depends_on = [var.vm_depends_on]
-  provisioner "file" {
-    content     = templatefile("${path.module}/puma.service.tmpl", { database_url = var.database_url })
-    destination = "/tmp/puma.service"
-  }
+  #provisioner "file" {
+  #  content     = templatefile("${path.module}/puma.service.tmpl", { database_url = var.database_url })
+  #  destination = "/tmp/puma.service"
+  #}
 
-  provisioner "remote-exec" {
-    script = "${path.module}/deploy.sh"
-  }
+  #provisioner "remote-exec" {
+  #  script = "${path.module}/deploy.sh"
+  #}
 
   connection {
     type  = "ssh"
