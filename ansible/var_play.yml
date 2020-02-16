@@ -1,0 +1,18 @@
+---
+- name: Play with vars
+  hosts: all
+  tasks:
+    - name: Simple vars
+      debug:
+        msg: "echo vm.name {{ name }}"
+    - name: Show massive
+      debug:
+        msg: "echo massibe {{ networkInterfaces }}"
+    - name: Work with massive
+      debug:
+        msg: "echo ip {{ item.networkIP }}"
+      with_items: "{{ networkInterfaces }}"
+    - name: Echo tag
+      debug:
+        msg: "Tag is {{ tag }}"
+...

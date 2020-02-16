@@ -13,6 +13,10 @@
         mode: 0644
       notify: restart mongod
 
+    - name: Get DB IP
+      set_fact: db_ip="{{ item.networkIP }}"
+      with_items: "{{ networkInterfaces }}"
+
   handlers:
   - name: restart mongod
     service: name=mongod state=restarted

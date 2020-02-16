@@ -4,6 +4,15 @@ projects:
   - "infra-264217"
 zones:
   - "europe-north1-c"
+#keyed_groups:
+#  - key: tags
+#hostnames:
+#  - name
+keyed_groups:
+  - key: zone
+groups:
+  db: "'-db' in name"
+  app: "'-app' in name"
 filters: []
 auth_kind: serviceaccount
 service_account_file: "~/gcp.json"
