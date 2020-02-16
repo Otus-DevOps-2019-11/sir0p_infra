@@ -3,6 +3,11 @@
   hosts: all
   become: true
   tasks:
+   # Выполним установку пакета python-apt
+  - name: Install python-apt  package
+    apt:
+      name: python-apt
+      state: present
   # Добавим ключ репозитория для последующей работы с ним
   - name: Add APT key
     apt_key:
