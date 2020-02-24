@@ -1,9 +1,0 @@
----
-- name: DB IP var
-  hosts: db
-  tasks:
-    - set_fact: db_host="{{ item.networkIP }}"
-      with_items: "{{  networkInterfaces }}"
-    - debug:
-        msg: "{{ db_host }}"
-...

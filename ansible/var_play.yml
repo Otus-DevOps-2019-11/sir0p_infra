@@ -12,7 +12,13 @@
       debug:
         msg: "echo ip {{ item.networkIP }}"
       with_items: "{{ networkInterfaces }}"
-    - name: Echo tag
+    - name: Magic varstest
       debug:
-        msg: "Tag is {{ tag }}"
+        msg: "{{hostvars[groups['db'][0]].networkInterfaces[0].networkIP}}"
+#    - name: Second magic test
+#      debug:
+#        msg: {% for hosts in groups['db'] %}
+#                {{ hostvars[item].networkIP }}
+ #            {% end for %}
+
 ...
