@@ -13,3 +13,6 @@ output "app_external_ip" {
 output "db_internal_ip" {
   value = module.db.db_int_ip
 }
+output "ext_db_ip" {
+  value = module.db.db_nat_ip
+}

@@ -1,28 +1,177 @@
 {
     "_meta": {
         "hostvars": {
-            "appserver": {
-                "ansible_host": "35.228.2.114"
+            "35.228.138.31": {
+                "canIpForward": false,
+                "cpuPlatform": "Intel Skylake",
+                "creationTimestamp": "2020-02-12T14:31:02.522-08:00",
+                "deletionProtection": false,
+                "disks": [
+                    {
+                        "autoDelete": true,
+                        "boot": true,
+                        "deviceName": "persistent-disk-0",
+                        "diskSizeGb": "10",
+                        "guestOsFeatures": [
+                            {
+                                "type": "VIRTIO_SCSI_MULTIQUEUE"
+                            }
+                        ],
+                        "index": 0,
+                        "interface": "SCSI",
+                        "kind": "compute#attachedDisk",
+                        "licenses": [
+                            "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1604-xenial"
+                        ],
+                        "mode": "READ_WRITE",
+                        "source": "https://www.googleapis.com/compute/v1/projects/infra-264217/zones/europe-north1-c/disks/reddis-app-0",
+                        "type": "PERSISTENT"
+                    }
+                ],
+                "id": "4000652332037161546",
+                "image": null,
+                "kind": "compute#instance",
+                "labelFingerprint": "42WmSpB8rSM=",
+                "machineType": "g1-small",
+                "machineType_selflink": "https://www.googleapis.com/compute/v1/projects/infra-264217/zones/europe-north1-c/machineTypes/g1-small",
+                "metadata": {},
+                "name": "reddis-app-0",
+                "networkInterfaces": [
+                    {
+                        "accessConfigs": [
+                            {
+                                "kind": "compute#accessConfig",
+                                "name": "external-nat",
+                                "natIP": "35.228.138.31",
+                                "networkTier": "PREMIUM",
+                                "type": "ONE_TO_ONE_NAT"
+                            }
+                        ],
+                        "fingerprint": "5Ev1o1syy_4=",
+                        "kind": "compute#networkInterface",
+                        "name": "nic0",
+                        "network": {
+                            "name": "default",
+                            "region": "global",
+                            "selfLink": "https://www.googleapis.com/compute/v1/projects/infra-264217/global/networks/default"
+                        },
+                        "networkIP": "10.166.15.202",
+                        "subnetwork": {
+                            "name": "default",
+                            "region": "europe-north1",
+                            "selfLink": "https://www.googleapis.com/compute/v1/projects/infra-264217/regions/europe-north1/subnetworks/default"
+                        }
+                    }
+                ],
+                "project": "infra-264217",
+                "scheduling": {
+                    "automaticRestart": true,
+                    "onHostMaintenance": "MIGRATE",
+                    "preemptible": false
+                },
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/infra-264217/zones/europe-north1-c/instances/reddis-app-0",
+                "startRestricted": false,
+                "status": "RUNNING",
+                "tags": {
+                    "fingerprint": "M-ggixIz-AU=",
+                    "items": [
+                        "reddit-app"
+                    ]
+                },
+                "zone": "europe-north1-c",
+                "zone_selflink": "https://www.googleapis.com/compute/v1/projects/infra-264217/zones/europe-north1-c"
             },
-            "dbserver": {
-                "ansible_host": "35.228.138.31"
+            "35.228.18.90": {
+                "canIpForward": false,
+                "cpuPlatform": "Intel Skylake",
+                "creationTimestamp": "2020-02-12T14:30:45.882-08:00",
+                "deletionProtection": false,
+                "disks": [
+                    {
+                        "autoDelete": true,
+                        "boot": true,
+                        "deviceName": "persistent-disk-0",
+                        "diskSizeGb": "10",
+                        "guestOsFeatures": [
+                            {
+                                "type": "VIRTIO_SCSI_MULTIQUEUE"
+                            }
+                        ],
+                        "index": 0,
+                        "interface": "SCSI",
+                        "kind": "compute#attachedDisk",
+                        "licenses": [
+                            "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1604-xenial"
+                        ],
+                        "mode": "READ_WRITE",
+                        "source": "https://www.googleapis.com/compute/v1/projects/infra-264217/zones/europe-north1-c/disks/reddis-db",
+                        "type": "PERSISTENT"
+                    }
+                ],
+                "id": "8718378065050845818",
+                "image": null,
+                "kind": "compute#instance",
+                "labelFingerprint": "42WmSpB8rSM=",
+                "machineType": "g1-small",
+                "machineType_selflink": "https://www.googleapis.com/compute/v1/projects/infra-264217/zones/europe-north1-c/machineTypes/g1-small",
+                "metadata": {},
+                "name": "reddis-db",
+                "networkInterfaces": [
+                    {
+                        "accessConfigs": [
+                            {
+                                "kind": "compute#accessConfig",
+                                "name": "external-nat",
+                                "natIP": "35.228.18.90",
+                                "networkTier": "PREMIUM",
+                                "type": "ONE_TO_ONE_NAT"
+                            }
+                        ],
+                        "fingerprint": "gY8C24gEymw=",
+                        "kind": "compute#networkInterface",
+                        "name": "nic0",
+                        "network": {
+                            "name": "default",
+                            "region": "global",
+                            "selfLink": "https://www.googleapis.com/compute/v1/projects/infra-264217/global/networks/default"
+                        },
+                        "networkIP": "10.166.15.201",
+                        "subnetwork": {
+                            "name": "default",
+                            "region": "europe-north1",
+                            "selfLink": "https://www.googleapis.com/compute/v1/projects/infra-264217/regions/europe-north1/subnetworks/default"
+                        }
+                    }
+                ],
+                "project": "infra-264217",
+                "scheduling": {
+                    "automaticRestart": true,
+                    "onHostMaintenance": "MIGRATE",
+                    "preemptible": false
+                },
+                "selfLink": "https://www.googleapis.com/compute/v1/projects/infra-264217/zones/europe-north1-c/instances/reddis-db",
+                "startRestricted": false,
+                "status": "RUNNING",
+                "tags": {
+                    "fingerprint": "NQyRUqL7UTU=",
+                    "items": [
+                        "reddit-db"
+                    ]
+                },
+                "zone": "europe-north1-c",
+                "zone_selflink": "https://www.googleapis.com/compute/v1/projects/infra-264217/zones/europe-north1-c"
             }
         }
     },
     "all": {
         "children": [
-            "app",
-            "db"
-         ]
-    },
-    "app": {
-        "hosts": [
-            "appserver"
+            "ungrouped"
         ]
     },
-    "db": {
+    "ungrouped": {
         "hosts": [
-            "dbserver"
+            "35.228.138.31",
+            "35.228.18.90"
         ]
     }
 }

@@ -14,14 +14,14 @@ resource "google_compute_instance" "db" {
   network = "default"
   access_config {}
   }
-  depends_on = [var.vm_depends_on]
-    provisioner "file" {
-    content     = templatefile("${path.module}/mongod.conf.tmpl", {db_ip = google_compute_instance.db.network_interface.0.network_ip}  )
-    destination = "/tmp/mongod.conf"
-  }
-   provisioner "remote-exec" {
-    script = "${path.module}/install_mongodb.sh"
-  }
+  #depends_on = [var.vm_depends_on]
+  #  provisioner "file" {
+  #  content     = templatefile("${path.module}/mongod.conf.tmpl", {db_ip = google_compute_instance.db.network_interface.0.network_ip}  )
+   # destination = "/tmp/mongod.conf"
+  #}
+  # provisioner "remote-exec" {
+   # script = "${path.module}/install_mongodb.sh"
+  #}
 
   connection {
     type  = "ssh"

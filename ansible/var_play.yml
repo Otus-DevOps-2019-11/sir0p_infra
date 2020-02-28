@@ -1,0 +1,24 @@
+---
+- name: Play with vars
+  hosts: all
+  tasks:
+    - name: Simple vars
+      debug:
+        msg: "echo vm.name {{ name }}"
+    - name: Show massive
+      debug:
+        msg: "echo massibe {{ networkInterfaces }}"
+    - name: Work with massive
+      debug:
+        msg: "echo ip {{ item.networkIP }}"
+      with_items: "{{ networkInterfaces }}"
+    - name: Magic varstest
+      debug:
+        msg: "{{hostvars[groups['db'][0]].networkInterfaces[0].networkIP}}"
+#    - name: Second magic test
+#      debug:
+#        msg: {% for hosts in groups['db'] %}
+#                {{ hostvars[item].networkIP }}
+ #            {% end for %}
+
+...
