@@ -26,12 +26,12 @@
   "provisioners": [
        {
         "type": "file",
-        "source": "files/puma.service",
+        "source": "ansible/files/puma.service",
         "destination": "/tmp/puma.service"
         },
         {
             "type": "shell",
-            "script": "scripts/deploy.sh",
+            "script": "config-scripts/deploy.sh",
             "execute_command": "sudo {{.Path}}"
             }
     ]
