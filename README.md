@@ -3,7 +3,9 @@
 [![Build Status](https://travis-ci.com/Otus-DevOps-2019-11/sir0p_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2019-11/sir0p_infra)
 
 Boris Korzun Infra repository
-#HW 11 Ansible-3
+
+## HW ansible-3
+
 Перенес плейбуки в раздельные роли
 описал два окружения
 Использовал плейбук из galaxy для nginx, и добавил его использоване для проксирования запросов с порта 80 на порт приложения (9292)
@@ -14,7 +16,8 @@ Boris Korzun Infra repository
 добавил необходимые экслюды для линтера.
 добавил бейдж
 
-#HW 10
+## HW ansible-2
+
 создал {{ необходимые }} роли.
 
 В созаднии со звездочкой, подключил динамическое инвентори с помощью плугина gcp_compute, для этого пришлость обновить ansible и добавить зависимости.
@@ -24,20 +27,21 @@ Boris Korzun Infra repository
 
 
 
-#HW9 ansible-1
+## HW ansible-1
 
 После удаления каталога с репозиторием коммандой ansible app -m command -a 'rm -rf
 ~/reddit'
 выполнение плейбука выполняет клонирование заново
 
-*
+
 создаем json конфиг, например с помощью "ansible-inventory  --list --export > inventory.json", убирем лишнее - ungrouped
 пишем "скрипт" который возращает его содержимое.
 Задача выполена.
 
 
 
-#HW8
+## HW8
+
 Создал корзину storage-bucket_url = gs://production-storage-bucket-infra-264217
 настройл терраформ для stage и prod на работу с удаленным бэкендом
 Одновременно запустить нельзя. т.к. применение prod и stage переводит одну и ту же инфраструктуру из одного состояние в другое,
@@ -49,13 +53,14 @@ Boris Korzun Infra repository
 
 
 
-#HW7
+## HW7
+
 добавление ключей одной строкой без разделителей - не очевидно
 после добавления может повиснуть ВМ
 terraform заменяет существующие данные metadata и в частности удалет ключи не указанные в конфигурации
 
 
-#HW5
+## HW5
 
 Для развертывания приложения с образа
 ```
@@ -69,7 +74,8 @@ gcloud compute instances create reddit-app\
   --zone us-central1-a
 ```
 
-#HW 4
+## HW 4
+
 testapp_IP = 34.70.172.79
 testapp_port = 9292
 
@@ -92,7 +98,7 @@ gcloud compute instances create reddit-app\
 ```
 
 
-#HW 3
+## HW 3
 
 bastion_IP = 35.217.9.133
 
