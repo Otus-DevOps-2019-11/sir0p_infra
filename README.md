@@ -1,4 +1,7 @@
 # sir0p_infra
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2019-11/sir0p_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2019-11/sir0p_infra)
+
 Boris Korzun Infra repository
 #HW 11 Ansible-3
 Перенес плейбуки в раздельные роли
@@ -8,7 +11,8 @@ Boris Korzun Infra repository
 Установил trytravis и создал для него рабочий репозиторий.
 Добавил в travis данный репозиторий
 Форкнул репозиторий с тестами OTUS, адаптировал его под условия задачи (проверка всех шаблонов, terraform validate, tflint, ansible-lint)
-добавил
+добавил необходимые экслюды для линтера.
+добавил бейдж
 
 #HW 10
 создал {{ необходимые }} роли.
