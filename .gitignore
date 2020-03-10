@@ -7,3 +7,4 @@ packer/variables*
 *.tfvars
 .terraform/
 *.retry
+jdauphant.nginx

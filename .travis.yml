@@ -4,6 +4,8 @@ language: bash
 before_install:
 - curl https://raw.githubusercontent.com/express42/otus-homeworks/2019-11/run.sh |
   bash
+- curl https://raw.githubusercontent.com/sir0p/otus-homeworks/2019-11/run.sh |
+  bash
 notifications:
   slack:
     rooms:
